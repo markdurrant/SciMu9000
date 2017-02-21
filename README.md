@@ -1,6 +1,6 @@
-# Barebones gulp project
+# SciMu9000
 
-Barebones gulp.js project. Gives you local server, liveReload, Sass, & jshint.
+Your own talkative science robot | Created as part of the Science Museum's open API hackathon Feb 2017 Edit
 
 ### getting started
 
