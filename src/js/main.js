@@ -20,7 +20,7 @@ if ('speechSynthesis' in window) {
 }
 // end cleanup
 
-function speakTest (sayThis) {
+function sciMuSay (sayThis) {
   var speachText = sayThis;
   var synth = window.speechSynthesis;
   var myVoice = speechVoices[61];

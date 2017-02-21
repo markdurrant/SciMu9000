@@ -39,12 +39,19 @@ body {
 //=============================================
 // STYLES
 //=============================================
+@keyframes sway {
+  0% { transform: translateX(-50%) scaleY(1) rotate(-.5deg) }
+  100% { transform: translateX(-50%) scaleY(1.025) rotate(.5deg)}
+}
+
 .sci-mu {
   position: absolute;
   height: 100%;
   width: 135vh;
   left: 50%;
+  transform-origin: 50% 100%;
   transform: translateX(-50%);
+  animation: sway 2s infinite alternate;
 }
 
 @keyframes blink {
@@ -65,17 +72,17 @@ body {
 
 @keyframes flash {
   0% { opacity: 1 }
-  1% { opacity: .25 }
-  2% { opacity: 1 }
-  10% { opacity: 1 }
-  11% { opacity: .25 }
-  12% { opacity: 1 }
+  4% { opacity: .25 }
+  8% { opacity: 1 }
+  20% { opacity: 1 }
+  24% { opacity: .25 }
+  28% { opacity: 1 }
   66% { opacity: 1 }
-  67% { opacity: .25 }
-  68% { opacity: 1 }
-  90% { opacity: 1 }
-  91% { opacity: .25 }
-  92% { opacity: 1 }
+  70% { opacity: .25 }
+  74% { opacity: 1 }
+  88% { opacity: 1 }
+  92% { opacity: .25 }
+  96% { opacity: 1 }
   100% { opacity: 1 }
 }
 
