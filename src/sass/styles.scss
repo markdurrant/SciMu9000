@@ -1,0 +1,102 @@
+//=============================================
+// IMPORTS
+//=============================================
+// normalize.css v3.0.0 | MIT License | git.io/normalize
+@import "_normalize.scss";
+
+// define mixins & functions
+@import "_mixins.scss";
+
+//=============================================
+// VARIABLES
+//=============================================
+$paper:  white;
+$ink:    black;
+
+//=============================================
+// BASCIS
+//=============================================
+*,
+*::before,
+*:after {
+  box-sizing: border-box;
+}
+
+ul {
+  padding: 0;
+  list-style: none;
+}
+
+html,
+body {
+  background-color: $paper;
+  color: $ink;
+  font-family: sans-serif;
+  line-height: 1.4;
+  overflow: hidden;
+}
+
+//=============================================
+// STYLES
+//=============================================
+.sci-mu {
+  position: absolute;
+  height: 100%;
+  width: 135vh;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+@keyframes blink {
+  0% { transform: scaleY(1) }
+  2% { transform: scaleY(.15) }
+  4% { transform: scaleY(1) }
+  8% { transform: scaleY(1) }
+  10% { transform: scaleY(.15) }
+  12% { transform: scaleY(1) }
+  100% { transform: scaleY(1) }
+}
+
+#eye-l,
+#eye-r {
+  animation: blink 5s infinite;
+  transform-origin: 50% 50%;
+}
+
+@keyframes flash {
+  0% { opacity: 1 }
+  1% { opacity: .25 }
+  2% { opacity: 1 }
+  10% { opacity: 1 }
+  11% { opacity: .25 }
+  12% { opacity: 1 }
+  66% { opacity: 1 }
+  67% { opacity: .25 }
+  68% { opacity: 1 }
+  90% { opacity: 1 }
+  91% { opacity: .25 }
+  92% { opacity: 1 }
+  100% { opacity: 1 }
+}
+
+#spark {
+  animation: flash 1.5s 2s infinite;
+}
+
+@keyframes speak-t {
+  0% { transform: translateY(0) }
+  100% { transform: translateY(-20%) }
+}
+
+@keyframes speak-b {
+  0% { transform: translateY(0) }
+  100% { transform: translateY(30%) }
+}
+
+.speak #teeth-t {
+  animation: speak-t .2s infinite alternate;
+}
+
+.speak #teeth-b {
+  animation: speak-b .2s infinite backwards alternate;
+}
