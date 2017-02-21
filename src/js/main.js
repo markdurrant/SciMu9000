@@ -41,15 +41,18 @@ function sciMuSay (sayThis) {
 // get something from the api
 function getApiData (searchTerm) {
   var request = new XMLHttpRequest();
-  request.open('GET', 'http://collection.sciencemuseum.org.uk//search/objects?q=' + searchTerm + '&page[number]=0&page[size]=1', true);
+  request.open('GET', 'http://collection.sciencemuseum.org.uk//search/objects?q=' + searchTerm + '&filter%5Bmuseum%5D=Science%20Museum&page[number]=0&page[size]=1', true);
   request.setRequestHeader('Accept', 'application/vnd.api+json');
 
   request.onload = function() {
     if (this.status >= 200 && this.status < 400) {
       var resp = this.response;
 
-      // parse json and turn into text
-      jsonToText(resp, searchTerm)
+      if (JSON.parse(resp).data.length == 1) {
+        jsonToText(resp, searchTerm);
+      } else {
+        sciMuSay("I'm sorry dave. There are no items at the Science Museum that match the term" + searchTerm);
+      }
     } else {
       sciMuSay("I'm sorry dave. There was an error with the API request");
     }
@@ -63,12 +66,14 @@ function getApiData (searchTerm) {
 }
 
 function jsonToText (resp, searchTerm) {
-  var jsonResp = JSON.parse(resp);
-  var name = jsonResp.data[0].attributes.name[0].value;
-  var description = jsonResp.data[0].attributes.description[0].value;
+  var jsonResp = JSON.parse(resp).data[0].attributes;
+  var name = jsonResp.name[0].value;
+  var description = jsonResp.description[0].value;
+  var location = jsonResp.locations[0].value.replace("Science Museum, ", "");
 
   var pause = '---';
-  var msg = "Dave I've found you a match for " + searchTerm + pause + ". Your match is a " + name + pause + "it is a" + description;
+  var msg = "Dave I've found you a match for " + searchTerm + pause + ". Your match is a " + name + pause + "it is a " + description + " " + pause + "you can find this item in the " + location;
 
   sciMuSay(msg);
+  console.log(msg);
 }
