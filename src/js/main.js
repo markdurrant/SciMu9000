@@ -66,7 +66,9 @@ function jsonToText (resp, searchTerm) {
   var jsonResp = JSON.parse(resp);
   var name = jsonResp.data[0].attributes.name[0].value;
   var description = jsonResp.data[0].attributes.description[0].value;
-  var msg = "Dave I've found you a match for " + searchTerm + ". Your match is a " + name + ". " + description;
+
+  var pause = '---';
+  var msg = "Dave I've found you a match for " + searchTerm + pause + ". Your match is a " + name + pause + "it is a" + description;
 
   sciMuSay(msg);
 }
