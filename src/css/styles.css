@@ -682,12 +682,12 @@ body {
 
 /* line 96, /Users/Mark/repos/SciMu9000/src/sass/styles.scss */
 .speak #teeth-t {
-  -webkit-animation: speak-t .2s infinite alternate;
-          animation: speak-t .2s infinite alternate;
+  -webkit-animation: speak-t .175s infinite alternate;
+          animation: speak-t .175s infinite alternate;
 }
 
 /* line 100, /Users/Mark/repos/SciMu9000/src/sass/styles.scss */
 .speak #teeth-b {
-  -webkit-animation: speak-b .2s infinite backwards alternate;
-          animation: speak-b .2s infinite backwards alternate;
+  -webkit-animation: speak-b .175s infinite backwards alternate;
+          animation: speak-b .175s infinite backwards alternate;
 }
