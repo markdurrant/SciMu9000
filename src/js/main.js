@@ -91,7 +91,7 @@ var recognition = new SpeechRecognition();
     recognition.interimResults = false;
     recognition.maxAlternatives = 1;
 
-document.body.onclick = function() {
+document.getElementById('go').onclick = function(){
   recognition.start();
 }
 
