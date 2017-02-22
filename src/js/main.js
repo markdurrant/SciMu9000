@@ -43,7 +43,7 @@ function sciMuSay (sayThis) {
 // get something from the api
 function getApiData (searchTerm) {
   var request = new XMLHttpRequest();
-  request.open('GET', 'http://collection.sciencemuseum.org.uk//search/objects?q=' + searchTerm + '&filter%5Bmuseum%5D=Science%20Museum&page[number]=0&page[size]=1', true);
+  request.open('GET', 'https://collection.sciencemuseum.org.uk//search/objects?q=' + searchTerm + '&filter%5Bmuseum%5D=Science%20Museum&page[number]=0&page[size]=1', true);
   request.setRequestHeader('Accept', 'application/vnd.api+json');
 
   request.onload = function() {
