@@ -130,8 +130,14 @@ recognition.onresult = function(event) {
 }
 
 // DEMO TIME
-var demoPhrases = [
-  "Hello Dave. My Name is ci mo 9000. pleased to meet you",
-  "shut up dave. your name is dave",
-  "I am a su su su ssuper ad ad ad adva advanced artificial intelligence"
-];
+document.addEventListener('keydown', function(event) {
+    if(event.keyCode == 49) {
+        sciMuSay("Hello Dave. My Name is ci mo 9000. pleased to meet you");
+    }
+    else if(event.keyCode == 50) {
+        sciMuSay("shut up dave. your name is dave");
+    }
+    else if(event.keyCode == 51) {
+        sciMuSay("I am a su su su ssuper ad ad ad adva advanced artificial intelligence");
+    }
+});
