@@ -126,3 +126,10 @@ recognition.onresult = function(event) {
   console.log(mySpeech);
   console.log(myWords);
 }
+
+// DEMO TIME
+var demoPhrases = [
+  "Hello Dave. My Name is ci mo 9000. pleased to meet you",
+  "shut up dave. your name is dave",
+  "I am a su su su ssuper ad ad ad adva advanced artificial intelligence"
+];
