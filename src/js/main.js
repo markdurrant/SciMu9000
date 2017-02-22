@@ -30,11 +30,11 @@ function sciMuSay (sayThis) {
 
   synth.speak(utterThis);
   toggleSpeakingAnimation();
-  console.log('talking started');
+  // console.log('talking started');
   console.log(sayThis);
 
   utterThis.onend = function(event) {
-    console.log('talking ended');
+    // console.log('talking ended');
     toggleSpeakingAnimation();
   }
 }
@@ -73,11 +73,11 @@ function jsonToText (resp, searchTerm) {
   var description = jsonResp.description[0].value;
   var location = jsonResp.locations[0].value.replace("Science Museum, ", "");
 
-  var pause = '---';
+  var pause = '-';
   var msg = "Dave I've found you a match for " + searchTerm + pause + ". Your match is a " + name + pause + "it is a " + description + " " + pause + "you can find this item in the " + location;
 
   sciMuSay(msg);
-  console.log(msg);
+  // console.log(msg);
 }
 
 // speech recognition
@@ -106,15 +106,17 @@ recognition.onresult = function(event) {
   var failed = true;
   var itemsDone = 0;
 
+  console.log(mySpeech);
+
   myWords.forEach( function(w){
     keyWords.forEach( function(k){
       if (w == k) {
-        console.log(w + "is a match");
+        // console.log(w + "is a match");
         getApiData(w);
         failed = false
         return failed;
       } else {
-        console.log("did not match");
+        // console.log("did not match");
       }
       return failed;
     })
@@ -126,8 +128,8 @@ recognition.onresult = function(event) {
     }
   });
 
-  console.log(mySpeech);
-  console.log(myWords);
+  // console.log(mySpeech);
+  // console.log(myWords);
 }
 
 // DEMO TIME
