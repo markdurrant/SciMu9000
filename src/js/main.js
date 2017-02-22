@@ -154,3 +154,7 @@ function logText (text) {
   var elm = document.getElementById('text-output');
   elm.innerHTML = text;
 }
+
+document.getElementById('info').onclick = function(){
+  sciMuSay("Hello Dave My Name is ci mo 9000. Press the Go button to speak to me. Ask me about something scientific. I'll tell you what it is and where to find it in the Museum");
+}

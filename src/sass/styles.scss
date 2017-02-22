@@ -151,3 +151,24 @@ body {
   font-size: 1.5vw;
   overflow: hidden;
 }
+
+.info {
+  background-color: rgba(#3f4a56, .25);
+  position: absolute;
+  margin: 3vw;
+  top: 0;
+  width: 6vw;
+  height: 6vw;
+  text-align: center;
+  padding-top: .5vw;
+  right: 0;
+  color: white;
+  font-size: 4vw;
+  overflow: hidden;
+  transition: all .25s;
+  cursor: pointer;
+
+  &:hover {
+    background-color: rgba(#3f4a56, .85);
+  }
+}

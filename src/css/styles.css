@@ -762,3 +762,27 @@ body {
   font-size: 1.5vw;
   overflow: hidden;
 }
+
+/* line 155, /Users/Mark/repos/SciMu9000/src/sass/styles.scss */
+.info {
+  background-color: rgba(63, 74, 86, 0.25);
+  position: absolute;
+  margin: 3vw;
+  top: 0;
+  width: 6vw;
+  height: 6vw;
+  text-align: center;
+  padding-top: .5vw;
+  right: 0;
+  color: white;
+  font-size: 4vw;
+  overflow: hidden;
+  -webkit-transition: all .25s;
+  transition: all .25s;
+  cursor: pointer;
+}
+
+/* line 171, /Users/Mark/repos/SciMu9000/src/sass/styles.scss */
+.info:hover {
+  background-color: rgba(63, 74, 86, 0.85);
+}
