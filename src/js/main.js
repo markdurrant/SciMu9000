@@ -65,6 +65,7 @@ function getApiData (searchTerm) {
   request.send();
 }
 
+// get api result and turn it into a voice message
 function jsonToText (resp, searchTerm) {
   var jsonResp = JSON.parse(resp).data[0].attributes;
   var name = jsonResp.name[0].value;
@@ -76,4 +77,52 @@ function jsonToText (resp, searchTerm) {
 
   sciMuSay(msg);
   console.log(msg);
+}
+
+// speech recognition
+var keyWords = ['train', 'computer', 'sign', 'robot', 'atom', 'dinosaur'];
+
+var SpeechRecognition = SpeechRecognition || webkitSpeechRecognition
+var SpeechGrammarList = SpeechGrammarList || webkitSpeechGrammarList
+var SpeechRecognitionEvent = SpeechRecognitionEvent || webkitSpeechRecognitionEvent
+
+var recognition = new SpeechRecognition();
+    recognition.lang = 'en-US';
+    recognition.interimResults = false;
+    recognition.maxAlternatives = 1;
+
+document.body.onclick = function() {
+  recognition.start();
+}
+
+recognition.onresult = function(event) {
+  var last = event.results.length - 1;
+  var mySpeech = event.results[last][0].transcript;
+  var myWords = mySpeech.split(" ");
+
+  var failed = true;
+  var itemsDone = 0;
+
+  myWords.forEach( function(w){
+    keyWords.forEach( function(k){
+      if (w == k) {
+        console.log(w + "is a match");
+        getApiData(w);
+        failed = false
+        return failed;
+      } else {
+        console.log("did not match");
+      }
+      return failed;
+    })
+
+    itemsDone++;
+
+    if(itemsDone === myWords.length && failed == true) {
+      sciMuSay("I'm sorry Dave. I was unable to find that in my database. Please try again");
+    }
+  });
+
+  console.log(mySpeech);
+  console.log(myWords);
 }
