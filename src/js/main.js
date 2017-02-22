@@ -32,6 +32,7 @@ function sciMuSay (sayThis) {
   toggleSpeakingAnimation();
   // console.log('talking started');
   console.log(sayThis);
+  logText(sayThis);
 
   utterThis.onend = function(event) {
     // console.log('talking ended');
@@ -107,6 +108,7 @@ recognition.onresult = function(event) {
   var itemsDone = 0;
 
   console.log(mySpeech);
+  logText(mySpeech);
 
   myWords.forEach( function(w){
     keyWords.forEach( function(k){
@@ -147,3 +149,8 @@ document.addEventListener('keydown', function(event) {
         sciMuSay("I am a su su su ssuper ad ad ad adva advanced artificial intelligence");
     }
 });
+
+function logText (text) {
+  var elm = document.getElementById('text-output');
+  elm.innerHTML = text;
+}
