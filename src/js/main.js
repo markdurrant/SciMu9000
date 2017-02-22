@@ -31,6 +31,7 @@ function sciMuSay (sayThis) {
   synth.speak(utterThis);
   toggleSpeakingAnimation();
   console.log('talking started');
+  console.log(sayThis);
 
   utterThis.onend = function(event) {
     console.log('talking ended');
