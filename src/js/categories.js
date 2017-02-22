@@ -253,6 +253,11 @@ var catsList = [];
 cats.aggregations.places.buckets.forEach( function(c) {
   var words = c.key.split(" ");
 
-  console.log(words);
-  catsList.push(c.key);
+  words.forEach(function(w){
+    catsList.push(w);
+  });
 });
+
+var keywords = ["Telecommunications", "Radio", "Communication", "Computing", "&", "Data", "Processing", "Electronic", "Components", "Psychology,", "Psychiatry", "Anthropometry", "Therapeutics", "Mathematics", "Orthopaedics", "Surgery", "Public", "Health", "Hygiene", "Art", "Materia", "Medica", "Pharmacology", "Road", "Transport", "Television", "Weighing", "Measuring", "Space", "Technology", "Time", "Measurement", "Smoking", "Classical", "Medieval", "Medicine", "Domestic", "Appliances", "Pharmacy-ware", "Biotechnology", "Ethnography", "and", "Folk", "Nursing", "Hospital", "Furnishings", "Plastics", "Modern", "Materials", "Anatomy", "Pathology", "Astronomy", "Dentistry", "Navigation", "Obstetrics,", "Gynaecology", "Contraception", "Ophthalmology", "Surveying", "Audiology", "Clinical", "Diagnosis", "Radiomedicine", "Temporary", "Exhibitions", "Electricity", "Magnetism", "Wellcome", "(general)", "Acoustics", "Experimental", "Chemistry", "Laboratory", "Motive", "Power", "Printing", "Writing", "Microbiology", "Microscopy", "(Wellcome)", "Water", "Aeronautics", "Anaesthesiology", "Supply", "Medical", "Glass-ware", "Oceanography", "Penn-Gaskell", "Collection", "Photographic", "Printed", "Books", "Signalling", "Textiles", "Machinery", "Medals", "Agricultural", "Engineering", "Cash",
+"Registers", "Civil", "Contemporary", "Environmental", "Science", "Froude", "Geophysics", "Glass", "Hand", "Machine", "Tools", "Industrial", "Lighting", "Locks", "Fastenings", "Locomotives", "Rolling", "Stock", "Gallery", "Ceramic-ware", "Meteorology", "Microscopes", "Nuclear", "Physics", "Nutrition", "Food", "Railway", "Timepieces", "Teaching", "Sewerage", "Sanitation",
+"Veterinary"]
