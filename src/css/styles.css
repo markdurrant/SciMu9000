@@ -465,38 +465,65 @@ body {
   overflow: hidden;
 }
 
+/* line 42, /Users/Mark/repos/SciMu9000/src/sass/styles.scss */
+.logo {
+  width: 30vw;
+  position: absolute;
+  margin: 2vw;
+}
+
+/* line 48, /Users/Mark/repos/SciMu9000/src/sass/styles.scss */
+.go {
+  background-color: #e24b33;
+  position: absolute;
+  margin: 3vw;
+  width: 21vw;
+  bottom: 0;
+  border: solid 1vw #e24b33;
+  border-left-width: 1.25vw;
+  border-top-width: 1.2vw;
+  border-right-width: 4vw;
+  -webkit-transition: all .25s;
+  transition: all .25s;
+}
+
+/* line 62, /Users/Mark/repos/SciMu9000/src/sass/styles.scss */
+.go:hover {
+  background-color: #f1841a;
+  border-color: #f1841a;
+  cursor: pointer;
+}
+
 @-webkit-keyframes sway {
   0% {
-    -webkit-transform: translateX(-50%) scaleY(1) rotate(-0.5deg);
-            transform: translateX(-50%) scaleY(1) rotate(-0.5deg);
+    -webkit-transform: scaleY(1) rotate(-0.5deg);
+            transform: scaleY(1) rotate(-0.5deg);
   }
   100% {
-    -webkit-transform: translateX(-50%) scaleY(1.025) rotate(0.5deg);
-            transform: translateX(-50%) scaleY(1.025) rotate(0.5deg);
+    -webkit-transform: scaleY(1.025) rotate(0.5deg);
+            transform: scaleY(1.025) rotate(0.5deg);
   }
 }
 
 @keyframes sway {
   0% {
-    -webkit-transform: translateX(-50%) scaleY(1) rotate(-0.5deg);
-            transform: translateX(-50%) scaleY(1) rotate(-0.5deg);
+    -webkit-transform: scaleY(1) rotate(-0.5deg);
+            transform: scaleY(1) rotate(-0.5deg);
   }
   100% {
-    -webkit-transform: translateX(-50%) scaleY(1.025) rotate(0.5deg);
-            transform: translateX(-50%) scaleY(1.025) rotate(0.5deg);
+    -webkit-transform: scaleY(1.025) rotate(0.5deg);
+            transform: scaleY(1.025) rotate(0.5deg);
   }
 }
 
-/* line 47, /Users/Mark/repos/SciMu9000/src/sass/styles.scss */
+/* line 74, /Users/Mark/repos/SciMu9000/src/sass/styles.scss */
 .sci-mu {
   position: absolute;
   height: 100%;
   width: 135vh;
-  left: 50%;
+  right: -10%;
   -webkit-transform-origin: 50% 100%;
           transform-origin: 50% 100%;
-  -webkit-transform: translateX(-50%);
-          transform: translateX(-50%);
   -webkit-animation: sway 2s infinite alternate;
           animation: sway 2s infinite alternate;
 }
@@ -563,7 +590,7 @@ body {
   }
 }
 
-/* line 67, /Users/Mark/repos/SciMu9000/src/sass/styles.scss */
+/* line 94, /Users/Mark/repos/SciMu9000/src/sass/styles.scss */
 #eye-l,
 #eye-r {
   -webkit-animation: blink 5s infinite;
@@ -656,7 +683,7 @@ body {
   }
 }
 
-/* line 89, /Users/Mark/repos/SciMu9000/src/sass/styles.scss */
+/* line 116, /Users/Mark/repos/SciMu9000/src/sass/styles.scss */
 #spark {
   -webkit-animation: flash 1.5s 2s infinite;
           animation: flash 1.5s 2s infinite;
@@ -706,13 +733,13 @@ body {
   }
 }
 
-/* line 103, /Users/Mark/repos/SciMu9000/src/sass/styles.scss */
+/* line 130, /Users/Mark/repos/SciMu9000/src/sass/styles.scss */
 .speak #teeth-t {
   -webkit-animation: speak-t .175s infinite alternate;
           animation: speak-t .175s infinite alternate;
 }
 
-/* line 107, /Users/Mark/repos/SciMu9000/src/sass/styles.scss */
+/* line 134, /Users/Mark/repos/SciMu9000/src/sass/styles.scss */
 .speak #teeth-b {
   -webkit-animation: speak-b .175s infinite backwards alternate;
           animation: speak-b .175s infinite backwards alternate;
